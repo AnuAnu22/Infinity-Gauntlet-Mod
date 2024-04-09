@@ -2,33 +2,41 @@
 	"schemaVersion": 1,
 	"id": "gauntlet",
 	"version": "${version}",
-	"name": "Infinite Gauntlet",
+	"name": "Infinity Gauntlet",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Anuamba"
+		"Me!"
 	],
 	"contact": {
-		"homepage": "https://www.youtube.com/@anuamba",
-		"sources": ""
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "GPL-3.0",
+	"license": "CC0-1.0",
 	"icon": "assets/gauntlet/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.anuamba.stone.Gauntlet"
+			{
+				"value": "com.anuamba.gauntlet.InfinityGauntlet",
+				"adapter": "kotlin"
+			}
 		],
-		"client": [
-			"com.anuamba.stone.Gauntlet"
+		"fabric-datagen": [
+			{
+				"value": "com.anuamba.gauntlet.InfinityGauntletDataGenerator",
+				"adapter": "kotlin"
+			}
 		]
 	},
 	"mixins": [
+		"gauntlet.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.15.9",
 		"minecraft": "~1.20.4",
-		"java": ">=22",
-		"fabric-api": "*"
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.9.23"
 	},
 	"suggests": {
 		"another-mod": "*"
